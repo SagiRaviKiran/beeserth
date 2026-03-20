@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEES ERTH | Premium Regenerative Heritage</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;1,400&family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-banner">
+        <span>Bio Enzyme Essence Eco Regenerative Terrestrial Health</span>
+    </div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="BEES ERTH" class="brand-logo">
+            </div>
+            <nav class="nav-center">
+                <ul>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#product-section">Products</a></li>
+                    <li><a href="#advantages">Why Us?</a></li>
+                    <li><a href="#goal">Goal</a></li>
+                </ul>
+            </nav>
+            <div class="cart-trigger" onclick="toggleCart()">
+                <span class="cart-text">CART</span>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="marquee-section">
+            <div class="marquee-track">
+                <img src="image1.jpg"><img src="image2.jpg"><img src="image3.jpg">
+                <img src="image4.jpg"><img src="image5.jpg"><img src="image6.jpg">
+                <img src="image1.jpg"><img src="image2.jpg"><img src="image3.jpg">
+                <img src="image4.jpg"><img src="image5.jpg"><img src="image6.jpg">
+            </div>
+        </section>
+
+        <section id="vision" class="section-grade curve-top vision-bg">
+            <h2 class="section-title">Our Vision</h2>
+            <p class="premium-text italic">"Restoring the primordial balance of terrestrial health by returning to nature’s own bio-enzymatic wisdom."</p>
+        </section>
+
+        <section id="product-section" class="section-grade curve-both product-bg">
+            <h2 class="section-title">Essential Collection</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="floor_cleaner.jpeg" alt="Floor Cleaner">
+                    <h3>Lemon Bio Enzyme Floor Cleaner</h3>
+                    <div class="price">Rs 160</div>
+                    <div class="item-qty-selector">
+                        <button onclick="changeLocalQty('fc-qty', -1)">−</button>
+                        <span id="fc-qty">1</span>
+                        <button onclick="changeLocalQty('fc-qty', 1)">+</button>
+                    </div>
+                    <button class="btn-royal" onclick="addToCart('Floor Cleaner', 160, 'fc-qty')">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="washing_machine_liquid.png" alt="Wash Machine">
+                    <h3>Bio Washing Machine Liquid</h3>
+                    <div class="price">Rs 240</div>
+                    <div class="item-qty-selector">
+                        <button onclick="changeLocalQty('wm-qty', -1)">−</button>
+                        <span id="wm-qty">1</span>
+                        <button onclick="changeLocalQty('wm-qty', 1)">+</button>
+                    </div>
+                    <button class="btn-royal" onclick="addToCart('Wash Machine Liquid', 240, 'wm-qty')">Add to Cart</button>
+                </div>
+		<div class="product-card">
+                    <img src="Shampoo.png" alt="Shampoo">
+                    <h3>Soap and shikaay shampoo</h3>
+                    <div class="price">Rs 200</div>
+                    <div class="item-qty-selector">
+                        <button onclick="changeLocalQty('wm-qty', -1)">−</button>
+                        <span id="wm-qty">1</span>
+                        <button onclick="changeLocalQty('wm-qty', 1)">+</button>
+                    </div>
+                    <button class="btn-royal" onclick="addToCart('Soap and shikaay shampoo', 200, 'wm-qty')">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="advantages" class="section-grade curve-both advantages-bg">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="table-wrapper">
+                <table class="premium-table">
+                    <thead>
+                        <tr><th>Feature</th><th>Chemical Brands</th><th>BEES ERTH</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Main Cleaning Agent</td><td>SLS / SLES / LABS</td><td class="better">Natural Enzymes</td></tr>
+                        <tr><td>Preservatives</td><td>Formaldehyde releasers, stabilizers</td><td class="better">Natural from fermentation</td></tr>
+                        <tr><td>Safe for Babies</td><td>Not Recommended</td><td class="better">100% Safe</td></tr>
+                        <tr><td>Headaches</td><td>Common Complaint</td><td class="better">None</td></tr>
+			<tr><td>Kills Good Bacteria</td><td>Yes</td><td class="better">No</td></tr>
+                        <tr><td>Water Pollution</td><td>Increases</td><td class="better">Reduces</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="goal" class="section-grade curve-bottom goal-bg">
+            <h2 class="section-title">Our 2030 Goal</h2>
+            <p class="premium-text">"Transitioning 1,00,000 homes from chemical toxicity into organic purity by 2030."</p>
+        </section>
+
+        <div id="cart-drawer" class="cart-sidebar">
+            <div class="cart-header"><h3>Your Selection</h3><button class="close-btn" onclick="toggleCart()">✕</button></div>
+            <div id="cart-items-list"></div>
+            <div class="cart-footer">
+                <div class="total-row"><span>Subtotal:</span><span>Rs <span id="cart-subtotal">0</span></span></div>
+                <div class="total-row"><span>Delivery:</span><span>Rs 40</span></div>
+                <div class="total-row grand"><span>Total:</span><span>Rs <span id="cart-grand-total">0</span></span></div>
+                <button class="btn-royal full-width" onclick="openCheckout()">Checkout Details</button>
+            </div>
+        </div>
+
+        <div id="checkout-view" class="modal-overlay" style="display:none;">
+            <div class="modal-content">
+                <button class="close-x" onclick="closeCheckout()">✕</button>
+                <h2 class="section-title" style="font-size:1.3rem;">Delivery Details</h2>
+                <div class="form-grid">
+                    <input type="text" id="custName" placeholder="Full Name" class="full-width">
+                    <input type="tel" id="custPhone" placeholder="WhatsApp Number">
+                    <input type="email" id="custMail" placeholder="Email Address">
+                    <input type="text" id="addHno" placeholder="H.No. / Apartment">
+                    <input type="text" id="addStreet" placeholder="Street Name">
+                    <input type="text" id="addCity" placeholder="Village / City">
+                    <input type="text" id="addMandal" placeholder="Mandal">
+                    <input type="text" id="addDist" placeholder="District">
+                    <input type="text" id="addState" placeholder="State">
+                    <input type="text" id="addPin" placeholder="Pin Code" maxlength="6">
+                    <input type="text" id="addLandmark" placeholder="Landmark" class="full-width">
+                </div>
+                <button class="btn-royal full-width" id="submitBtn" onclick="finalizeOrder()">Place Order via WhatsApp</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="ocean-footer">
+        <div class="wave-container">
+            <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
+                <g class="parallax">
+                    <use href="#gentle-wave" x="48" y="0" fill="rgba(0, 31, 63, 0.7)" />
+                    <use href="#gentle-wave" x="48" y="3" fill="rgba(0, 51, 102, 0.5)" />
+                    <use href="#gentle-wave" x="48" y="5" fill="rgba(0, 82, 164, 0.3)" />
+                    <use href="#gentle-wave" x="48" y="7" fill="#001F3F" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-wrap">
+                <img src="logo.png" alt="Logo" class="footer-logo">
+                <div class="footer-info">
+                    <p>✉️ beeserth@gmail.com</p>
+                    <p>📞 +91 8375003180</p>
+                    <a href="https://www.instagram.com/beeserth" target="_blank" class="insta-link">Instagram</a>
+                </div>
+            </div>
+            <p class="copy">&copy; 2026 BEES ERTH | Premium Regenerative Heritage</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
